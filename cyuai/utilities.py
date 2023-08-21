@@ -1,3 +1,4 @@
+import datetime
 import glob
 import mimetypes
 import os
@@ -146,3 +147,7 @@ def suggest_execution_threads() -> int:
     if 'CUDAExecutionProvider' in onnxruntime.get_available_providers():
         return 8
     return 1
+
+
+def current_time() -> str:
+    return datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
